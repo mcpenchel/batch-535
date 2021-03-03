@@ -5,7 +5,7 @@ class UserJob < ApplicationJob
     user = User.find(user_id)
 
     puts "Going to Clearbit API to enrich #{user.email}.."
-    sleep 10
+    sleep(10)
     puts "Finished enriching the user."
   end
 end

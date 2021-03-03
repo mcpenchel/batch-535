@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   after_commit :enrich_data # commit triggers for update AND create
 
-  def enrich_data # instance method
-    UserJob.perform_later(id) # .wait_until(tomorrow)
+  def enrich_data
+    UserJob.perform_later(id)
   end
 end
